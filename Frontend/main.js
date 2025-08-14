@@ -1,4 +1,5 @@
 // Enhanced Navigation and Smooth Scrolling System
+const BASE_URL = 'https://spaceapplicationx.onrender.com';
 
 // Elements
 const navMenu = document.getElementById('nav-menu');
@@ -197,9 +198,6 @@ const swiperServices = new Swiper('.Services__swiper', {
     },
 });
 
-// Authentication Modal Integration
-// This replaces the old email signup form with the new modal overlay
-
 // Load authentication modal
 function loadAuthModal() {
     fetch('auth-modal.html')
@@ -324,18 +322,6 @@ if (document.querySelector('.footer__planet-2')) {
     sr.reveal('.footer__planet-2', { origin: 'right', delay: 500 });
 }
 
-
-
-// Load authentication modal on page load
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('/auth-modal')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('auth-modal-container').innerHTML = html;
-            // Optionally, initialize modal logic here if needed
-        })
-        .catch(error => console.error('Error loading auth modal:', error));
-});
 
 //Accordion functionality
 function toggleAccordion(headerElement) {

@@ -1,10 +1,14 @@
+const BASE_URL = 'https://spaceapplicationx.onrender.com';
+
+
+
 let modalOverlay, modalClose, tabBtns, tabContents, signupForm, loginForm, socialBtns;
 let currentTab = 'signup';
 let isAuthenticated = false;
 
 // Inject modal HTML and initialize
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('/auth-modal')
+  fetch(`${BASE_URL}/auth-modal`)
     .then(res => res.text())
     .then(html => {
       document.getElementById('auth-modal-container').innerHTML = html;
