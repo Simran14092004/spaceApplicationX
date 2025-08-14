@@ -198,16 +198,6 @@ const swiperServices = new Swiper('.Services__swiper', {
     },
 });
 
-// Inject modal HTML and initialize
-document.addEventListener('DOMContentLoaded', () => {
-  fetch(`${BASE_URL}/auth-modal`)
- .then(res => res.text())
-    .then(html => {
-      document.getElementById('auth-modal-container').innerHTML = html;
-      window.AuthModal.init(); // Initialize after injection
-    })
-    .catch(err => console.error('Modal load error:', err));
-});
 
 
 // Initialize authentication system

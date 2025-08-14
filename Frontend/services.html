@@ -386,6 +386,14 @@
  function toggleAccordion(header) {
       const content = header.nextElementSibling;
       const icon = header.querySelector('.accordion-icon');
+
+      // Logout function
+  window.logout = function () {
+    console.log('Logout triggered');
+    localStorage.removeItem('user');
+    location.reload();
+  };
+
       
       // Close all other accordions
       document.querySelectorAll('.accordion-content').forEach(item => {
