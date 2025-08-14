@@ -1,5 +1,5 @@
 // Enhanced Navigation and Smooth Scrolling System
-const BASE_URL = 'https://spaceapplicationx.onrender.com';
+const BASE_URL = 'https://spaceapplicationx.onrender.com/';
 
 // Elements
 const navMenu = document.getElementById('nav-menu');

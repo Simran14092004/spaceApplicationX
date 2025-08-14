@@ -1,4 +1,4 @@
-const BASE_URL = 'https://spaceapplicationx.onrender.com';
+const BASE_URL = 'https://spaceapplicationx.onrender.com/';
 
 
 
