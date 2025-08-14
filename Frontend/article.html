@@ -224,13 +224,6 @@
   document.querySelectorAll('.nav__link').forEach(link => {
     link.onclick = () => navMenu.classList.remove('show-menu');
   });
-
-  //Logout function
-window.logout = function () {
-  console.log('Logout triggered');
-  localStorage.removeItem('user');
-  location.reload();
-};
   // Accordion functionality
     function toggleAccordion(header) {
       const content = header.nextElementSibling;

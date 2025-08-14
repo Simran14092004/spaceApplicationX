@@ -383,12 +383,6 @@
     link.onclick = () => navMenu.classList.remove('show-menu');
   });
 
-  //Logout function
-window.logout = function () {
-  console.log('Logout triggered');
-  localStorage.removeItem('user');
-  location.reload();
-};
  function toggleAccordion(header) {
       const content = header.nextElementSibling;
       const icon = header.querySelector('.accordion-icon');
