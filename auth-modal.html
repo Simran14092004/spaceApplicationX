@@ -1,0 +1,104 @@
+<div id="auth-modal" class="modal-overlay">
+  <div class="modal-container">
+    
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h2>Welcome to SpaceExplorer</h2>
+      <button class="modal-close" id="modal-close">&times;</button>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="auth-scrollable">
+      
+      <!-- Tab Buttons -->
+      <div class="modal-tabs">
+        <button class="tab-btn active" data-tab="signup">Sign Up</button>
+        <button class="tab-btn" data-tab="login">Login</button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="modal-content">
+        
+        <!-- Sign Up Form -->
+        <div id="signup-form-container" class="tab-content active">
+          <h3>Create Your Account</h3>
+
+          <div class="social-login">
+            <button class="social-btn google" data-provider="google">
+              <i class="ri-google-fill"></i> Continue with Google
+            </button>
+            <button class="social-btn linkedin" data-provider="linkedin">
+              <i class="ri-linkedin-fill"></i> Continue with LinkedIn
+            </button>
+            <button class="social-btn twitter" data-provider="twitter">
+              <i class="ri-twitter-x-fill"></i> Continue with X
+            </button>
+          </div>
+
+          <div class="divider">
+            <span>or sign up with email</span>
+          </div>
+
+          <form id="auth-signup-form" class="auth-form">
+            <div class="form-group">
+              <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div id="signup-error" class="error-message" style="display: none;"></div>
+            <button type="submit" class="auth-btn primary">Create Account</button>
+          </form>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form-container" class="tab-content">
+          <h3>Welcome Back</h3>
+
+          <div class="social-login">
+            <button class="social-btn google" data-provider="google">
+              <i class="ri-google-fill"></i> Continue with Google
+            </button>
+            <button class="social-btn linkedin" data-provider="linkedin">
+              <i class="ri-linkedin-fill"></i> Continue with LinkedIn
+            </button>
+            <button class="social-btn twitter" data-provider="twitter">
+              <i class="ri-twitter-x-fill"></i> Continue with X
+            </button>
+          </div>
+
+          <div class="divider">
+            <span>or login with email</span>
+          </div>
+
+          <form id="auth-login-form" class="auth-form">
+            <div class="form-group">
+              <input type="email" id="login-email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="login-password" name="password" placeholder="Password" required>
+            </div>
+            <div id="login-error" class="error-message" style="display: none;"></div>
+            <button type="submit" class="auth-btn primary">Sign In</button>
+          </form>
+
+          <p class="form-footer">
+            Don't have an account? <a href="#" onclick="AuthModal.switchTab('signup')">Sign up here</a>
+          </p>
+        </div>
+
+      </div> <!-- End of modal-content -->
+    </div> <!-- End of auth-scrollable -->
+
+  </div> <!-- End of modal-container -->
+</div> <!-- End of modal-overlay -->
+

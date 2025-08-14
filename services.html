@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Services - SpaceExplorer</title>
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="images_used/favicon.png" type="image/x-icon">
+  
+  <!--=============== REMIXICONS ===============-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+  
+  <!--=============== SWIPER CSS ===============-->
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Additional styles for services page */
+    :root {
+      --service-bg: hsla(238, 50%, 20%, .4);
+      --border-gradient: linear-gradient(90deg, hsl(192, 94%, 49%), hsl(224, 98%, 51%));
+    }
+    
+    .services-page {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+    
+    .services-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .service-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .accordion-item {
+      margin-bottom: 1.5rem;
+      border: 2px solid;
+      border-image: var(--border-gradient) 1;
+      background: var(--service-bg);
+      backdrop-filter: blur(16px);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .accordion-header {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .accordion-header:hover {
+      background-color: hsla(243, 98%, 51%, .2);
+    }
+    
+    .accordion-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white-color);
+    }
+    
+    .accordion-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 1.5rem;
+    }
+    
+    .accordion-content.active {
+      max-height: 1000px;
+      padding: 0 1.5rem 1.5rem;
+    }
+    
+    .service-image {
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    
+    .service-meta {
+      color: var(--first-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .service-full-content {
+      line-height: 1.8;
+      color: var(--text-color);
+    }
+    
+    .back-button {
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 0.75rem 2rem;
+      background: var(--first-gradient);
+      color: var(--white-color);
+      text-decoration: none;
+      border-radius: 25px;
+      transition: transform 0.3s ease;
+    }
+    
+    .back-button:hover {
+      transform: translateY(-2px);
+    }
+    
+    .page-navigation {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .service-features {
+      margin: 1rem 0;
+    }
+    
+    .service-features ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .service-features li {
+      padding: 0.5rem 0;
+      border-left: 3px solid var(--first-color);
+      padding-left: 1rem;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="images_used/logo.svg" alt="image"> Planet
+      </a>
+      
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-menu-4-line"></i>
+      </div>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#footer" class="nav__link">Others</a></li>
+        </ul>
+
+        <!-- Log out button-->
+         <button class="logout-btn" onclick="logout()"><i class="ri-logout-box-r-line"></i> Log Out</button>
+
+
+        <!-- Close button -->
+        <div class="nav__close" id="nav-close">
+          <i class="ri-close-large-line"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Services Page -->
+  <main class="services-page" id="services">
+    <div class="services-header">
+      <h1 class="section__title">Our <span>Services</span></h1>
+      <p>Explore our comprehensive range of space exploration services</p>
+    </div>
+
+    <div class="service-accordion">
+      <!-- Cosmology Insights Service -->
+      <div id="cosmology" class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div>
+            <h3 class="accordion-title">Cosmology Insights</h3>
+            <span class="service-meta">Your Journey begins...</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+          <img src="images_used/ficplanets.jpeg" alt="Cosmology Insights" class="service-image">
+          <div class="service-full-content">
+            <h4>Deep Dive into Cosmic Mysteries</h4>
+            <p>Embark on an extraordinary journey through the cosmos with our comprehensive cosmology insights service. Explore the fundamental nature of the universe, from the Big Bang to the formation of galaxies and the mysterious dark matter that shapes cosmic evolution.</p>
+            
+            <div class="service-features">
+              <h5>What We Offer:</h5>
+              <ul>
+                <li>Interactive cosmic timeline exploration</li>
+                <li>Dark matter and dark energy simulations</li>
+                <li>Galaxy formation visualizations</li>
+                <li>Cosmic microwave background analysis</li>
+                <li>Universe expansion rate calculations</li>
+                <li>Personalized cosmic journey planning</li>
+              </ul>
+            </div>
+            
+            <h5>Educational Benefits</h5>
+            <p>Our cosmology insights service provides cutting-edge educational content that makes complex astrophysical concepts accessible to everyone. Whether you're a student, educator, or space enthusiast, you'll gain deep understanding of our universe's most profound mysteries.</p>
+            
+            <h5>Interactive Features</h5>
+            <p>Experience immersive 3D visualizations of cosmic structures, real-time data from space telescopes, and interactive simulations that let you explore different cosmological scenarios. Our expert-curated content is regularly updated with the latest discoveries.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Astrophysics Insights Service -->
+      <div id="astrophysics" class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div>
+            <h3 class="accordion-title">Astrophysics Insights</h3>
+            <span class="service-meta">Let's Explore...</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+          <img src="images_used/planetsuseit.jpeg" alt="Astrophysics Insights" class="service-image">
+          <div class="service-full-content">
+            <h4>Unlock the Secrets of the Universe</h4>
+            <p>Dive deep into the fascinating world of astrophysics with our comprehensive insights service. Understand the fundamental laws that govern celestial bodies, from stellar evolution to black hole physics, neutron stars, and the mysterious phenomena that shape our universe.</p>
+            
+            <div class="service-features">
+              <h5>Core Offerings:</h5>
+              <ul>
+                <li>Stellar lifecycle analysis and modeling</li>
+                <li>Black hole physics and gravitational waves</li>
+                <li>Neutron star and pulsar studies</li>
+                <li>Exoplanet detection and characterization</li>
+                <li>Supernova explosion simulations</li>
+                <li>Gravitational lensing phenomena</li>
+              </ul>
+            </div>
+            
+            <h5>Advanced Learning</h5>
+            <p>Our astrophysics insights provide university-level content made accessible through interactive visualizations and expert explanations. Explore complex topics like quantum mechanics in stellar environments, nuclear fusion in stars, and the physics of extreme cosmic environments.</p>
+            
+            <h5>Research Integration</h5>
+            <p>Stay updated with the latest astrophysical research, including real-time data from major observatories and space missions. Our content is curated by professional astrophysicists and updated regularly with new discoveries.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Virtual Space Tour Service -->
+      <div id="virtual-tour" class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div>
+            <h3 class="accordion-title">Virtual Space Tour</h3>
+            <span class="service-meta">Wanna Try Something Magical...</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+          <img src="images_used/whirmhole.jpeg" alt="Virtual Space Tour" class="service-image">
+          <div class="service-full-content">
+            <h4>Experience the Universe Like Never Before</h4>
+            <p>Embark on breathtaking virtual journeys through space and time with our revolutionary virtual space tour service. Explore distant galaxies, witness stellar phenomena, and visit planets across the universe from the comfort of your home.</p>
+            
+            <div class="service-features">
+              <h5>Immersive Experiences:</h5>
+              <ul>
+                <li>360-degree virtual reality space tours</li>
+                <li>Real-time space mission simulations</li>
+                <li>Interactive planetary surface exploration</li>
+                <li>Historical space mission recreations</li>
+                <li>Future space travel scenario planning</li>
+                <li>Multi-sensory cosmic experiences</li>
+              </ul>
+            </div>
+            
+            <h5>Cutting-Edge Technology</h5>
+            <p>Our virtual space tours utilize the latest VR and AR technologies to provide incredibly realistic experiences. Explore the surface of Mars, fly through Saturn's rings, or witness a supernova explosion up close with stunning visual fidelity.</p>
+            
+            <h5>Educational Adventures</h5>
+            <p>Each virtual tour is designed to be both entertaining and educational, with expert narration, interactive elements, and scientific accuracy. Perfect for classrooms, families, or individual space enthusiasts seeking immersive cosmic experiences.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solar Eclipse Service -->
+      <div id="solar-eclipse" class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div>
+            <h3 class="accordion-title">Solar Eclipse</h3>
+            <span class="service-meta">Know All About it Now...</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+          <img src="images_used/solar_eclipse_slide.jpeg" alt="Solar Eclipse" class="service-image">
+          <div class="service-full-content">
+            <h4>Master the Art of Eclipse Observation</h4>
+            <p>Comprehensive solar eclipse education and observation services that prepare you for one of nature's most spectacular phenomena. Learn everything from eclipse mechanics to safe viewing techniques and photography tips.</p>
+            
+            <div class="service-features">
+              <h5>Complete Eclipse Package:</h5>
+              <ul>
+                <li>Eclipse prediction and tracking tools</li>
+                <li>Safe solar viewing equipment guidance</li>
+                <li>Professional eclipse photography workshops</li>
+                <li>Real-time eclipse live streams</li>
+                <li>Eclipse travel planning and logistics</li>
+                <li>Historical eclipse data and analysis</li>
+              </ul>
+            </div>
+            
+            <h5>Expert Guidance</h5>
+            <p>Learn from professional astronomers and eclipse chasers who have witnessed dozens of eclipses worldwide. Our comprehensive guides cover everything from basic eclipse science to advanced observation techniques.</p>
+            
+            <h5>Global Eclipse Network</h5>
+            <p>Join our global community of eclipse enthusiasts and gain access to exclusive content, real-time alerts for upcoming eclipses, and opportunities to join organized eclipse expeditions to optimal viewing locations worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-navigation">
+      <a href="index.html" class="back-button">
+        <i class="ri-arrow-left-line"></i> Back to Home
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer_container container grid">
+      <div class="footer__content grid">
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__links">HOME</a></li>
+          <li><a href="article.html" class="footer__links">ARTICLES</a></li>
+          <li><a href="services.html" class="footer__links">SERVICES</a></li>
+        </ul>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/" target="_blank" class="footer__social-links">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" class="footer__social-links">
+            <i class="ri-instagram-fill"></i>
+          </a>
+          <a href="https://twitter.com/" target="_blank" class="footer__social-links">
+            <i class="ri-twitter-x-fill"></i>
+          </a>
+        </div>
+      </div>
+      <span class="footer__copy">
+        &#169; All Rights Reserved By SIMRAN_SINGH
+      </span>
+    </div>
+  </footer>
+
+  <script>
+     // Navbar toggle for mobile menu
+  const navMenu = document.getElementById('nav-menu'),
+        navToggle = document.getElementById('nav-toggle'),
+        navClose = document.getElementById('nav-close');
+
+  // Show menu
+  if(navToggle){
+    navToggle.onclick = () => {
+      navMenu.classList.add('show-menu');
+    }
+  }
+
+  // Hide menu
+  if(navClose){
+    navClose.onclick = () => {
+      navMenu.classList.remove('show-menu');
+    }
+  }
+
+  // Hide menu on nav link click (optional, for better UX)
+  document.querySelectorAll('.nav__link').forEach(link => {
+    link.onclick = () => navMenu.classList.remove('show-menu');
+  });
+
+  //Logout function
+window.logout = function () {
+  console.log('Logout triggered');
+  localStorage.removeItem('user');
+  location.reload();
+};
+ function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.accordion-icon');
+      
+      // Close all other accordions
+      document.querySelectorAll('.accordion-content').forEach(item => {
+        if (item !== content) {
+          item.classList.remove('active');
+          item.style.maxHeight = '0';
+          item.previousElementSibling.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+        }
+      });
+      
+      // Toggle current accordion
+      if (content.classList.contains('active')) {
+        content.classList.remove('active');
+        content.style.maxHeight = '0';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+   //Accordion functionality from services section to sevices Accordion
+     window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target && target.classList.contains('accordion-item')) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          // Expand the accordion
+          const header = target.querySelector('.accordion-header');
+          if (header && typeof toggleAccordion === 'function') {
+            toggleAccordion(header);
+          }
+        }, 100);
+      }
+    }
+  });
+</script>
+<script src="logout.js"></script>
+</body>
+</html>

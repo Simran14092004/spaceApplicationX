@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceExplorer</title>
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="mini project img/favicon.png" type="image/x-icon">
+
+
+  <!--=============== REMIXICONS ===============-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+  <!--=============== SWIPER CSS ===============-->
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+  <!-- Header Section -->
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+          <a href="#" class="nav__logo">
+              <img src="images_used/logo.svg" alt="image"> Planet
+          </a>
+          
+        
+          <!--Toggle button-->
+           <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-4-line"></i>
+           </div>
+           <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+              <li><a href="index.html" class="nav__link">Home</a></li>
+              <li><a href="#travel" class="nav__link">Articles</a></li>
+              <li><a href="#Services" class="nav__link">Services</a></li>
+              <li><a href="#about" class="nav__link">About Us</a></li>
+              <li><a href="#contact" class="nav__link">Contact Us</a></li>
+             </ul>
+
+              <!-- Log out button -->
+               <button class="logout-btn" onclick="logout()"><i class="ri-logout-box-r-line"></i> Log Out</button>
+
+              <!--Close button-->
+              <div class="nav__close" id="nav-close">
+                 <i class="ri-close-large-line"></i>
+               </div>
+           </div>
+      </nav>
+
+    </header>
+  <!-- HERO SECTION -->
+
+  <section id="home" class="hero">
+    <div class="hero-slider-container">
+      <div class="hero-slider">
+        <img src="images_used/galaxy.jpeg" alt="Slide 1">
+        <img src="images_used/planets beuty.jpeg" alt="Slide 2">
+        <img src="images_used/planetsalign.jpeg" alt="Slide 3">
+        <img src="images_used/earth_fic_slide.jpg" alt="Slide 4">
+  
+        <div class="slider-dots">
+          <span class="dot" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+          <span class="dot" data-slide="3"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Right below the hero section -->
+<section class="text-section">
+  <div class="text">
+    <h2 class="section__title scroll-reveal">
+      EXPLORE&nbsp;<span>THE UNIVERSE</span>
+    </h2>
+    <p class="section__description scroll-reveal">
+      Discover the beauty of space, from galaxies to black holes, and everything in between.
+    </p>
+  </div>
+</section>
+
+
+
+  <!-- ARTICLE SECTION-TRAVEL -->
+   
+  <section class="travel section" id="travel">
+    
+    
+    <div class="travel__container container">
+        <h2 class="section__title">
+            ARTICLES <span>HERE</span>
+        </h2>
+         <p class="section__description">Explore our latest articles on space exploration and discoveries.</p>
+
+        <div class="travel__swiper swiper">
+            <div class="swiper-wrapper">
+
+
+                <article class="travel__card  swiper-slide">
+
+                    <img src="images_used/cloudyblackhole.jpeg" alt="image" class="travel__img">
+
+                   <h3 class="travel__title">BLACK HOLE</h3>
+                   <span class="tavel__info">#The_Truth_Unfolded...</span>
+                   <p class="travel__discription">
+                    Black holes are regions in space with intense gravity where nothing, not even light, can escape. 
+                    They vary in size and warp space-time, with phenomena like spaghettification and Hawking radiation.
+                   </p>
+                </article>
+                <article class="travel__card  swiper-slide">
+
+                    <img src="images_used/astronaut_article.jpeg" alt="image" class="travel__img">
+
+                    <h3 class="travel__title">ISRO</h3>
+                    <span class="tavel__info">#Triumph_&_Missions...</span>
+                    <p class="travel__discription">
+                      ISRO has achieved major milestones with missions like Chandrayaan, Mangalyaan, and Gaganyaan,
+                       establishing India as a key space player with cost-effective, innovative space exploration.
+                    </p>
+                    </article>
+                <article class="travel__card swiper-slide">
+                    <img src="images_used/rocket_article1.jpg" alt="image" class="travel__img">
+
+                    <h3 class="travel__title">NASA</h3>
+                    <span class="tavel__info">#Future_Missions...</span>
+                    <p class="travel__discription">
+                      NASA’s future missions include returning humans to the Moon through Artemis, 
+                      exploring Mars with Perseverance, studying asteroids with Psyche, and 
+                      observing the Sun with Parker Solar Probe. 
+                    </p>
+                </article>
+                <article class="travel__card swiper-slide">
+                    <img src="images_used/solar_slide.jpeg" alt="image" class="travel__img">
+
+                    <h3 class="travel__title">ANOTHER SOLAR SYSTEM</h3>
+                    <span class="tavel__info">#Is_Someone_There...</span>
+                    <p class="travel__discription">
+                      The TOI-700 solar system, 100 light-years away, has three Earth-sized planets,
+                       with TOI-700 d in the habitable zone, potentially supporting liquid water and life.
+                    </p>
+                </article>
+            </div>
+        </div>
+          <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <button class="section__button" onclick="window.location='/article'">Read All Articles</button>
+</section>
+ </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="Services section" id="Services">
+    
+    
+    <div class="Services__container container">
+        <h2 class="section__title">
+             <span>SERVICES</span>
+        </h2>
+        <p class="section__description">Discover the services we offer for space enthusiasts and professionals.</p>
+
+        <div class="Services__swiper swiper">
+            <div class="swiper-wrapper">
+
+
+                <article class="Services__card  swiper-slide">
+
+                    <img src="images_used/ficplanets.jpeg" alt="image" class="Services__img">
+
+                   <h3 class="travel__title">Cosmology Insights</h3>
+                   <span class="tavel__info">Your Journey begins...</span>
+                   <button onclick="window.location.href='services.html#cosmology'">View Now</button>
+                </article>
+
+                <article class="Services__card  swiper-slide">
+
+                    <img src="images_used/planetsuseit.jpeg" alt="image" class="Services__img">
+
+                   <h3 class="travel__title">Astrophysics Insights</h3>
+                   <span class="tavel__info">Let's Explore...</span>
+                   <button onclick="window.location.href='services.html#astrophysics'">View Now</button>
+                </article>
+
+                <article class="Services__card  swiper-slide">
+
+                    <img src="images_used/whirmhole.jpeg" alt="image" class="Services__img">
+
+                   <h3 class="travel__title">Virtual Space Tour</h3>
+                   <span class="tavel__info">Wanna Try Something Magical...</span>
+                   <button onclick="window.location.href='services.html#virtual-tour'">Book Now</button>
+                </article>
+
+                
+                <article class="Services__card  swiper-slide">
+
+                  <img src="images_used/solar_eclipse_slide.jpeg" alt="image" class="Services__img">
+
+                 <h3 class="travel__title">Solar Eclipse</h3>
+                 <span class="tavel__info">Know All About it Now...</span>
+                 <button onclick="window.location.href='services.html#solar-eclipse'">View Now</button>
+              </article>
+            </div>
+        </div>
+          <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <button class="section__button" onclick="window.location='/services'">View All Services</button>
+ </section>
+  
+
+  <!-- ABOUT SECTION -->
+
+<section class="about section" id="about">
+    
+  <div class="about__container container">
+      <h2 class="section__title">
+          ABOUT <span>US</span>
+      </h2>
+       <p class="section__description">Learn more about our mission and team.</p>
+
+    <!-- Add more cards as needed -->
+     <div class="about__swiper swiper">
+          <div class="swiper-wrapper">
+
+            <article class="about__card ">
+                <img src="images_used/simran.jpeg" alt="image" class="about__img">
+                
+                <span class="about__info">Hey! Simran Here...</span>
+                <p class="about__description">Simran Singh, a curious mind diving deep into the world of AI/ML, 
+                                              Robotics, and Software Development. 
+                    </p>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-links">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-links">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="footer__social-links">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                      </div>
+
+            </article>
+
+        </div>
+
+        <div>
+          <article class="about__card s">
+            <img src="images_used/riya.jpeg" alt="image" class="about__img">
+            
+            <span class="about__info">Hey! Riya Here...</span>
+            <p class="about__description">Riya Yadav, a budding AI/ML engineer with a growing passion for Frontend Development.</p>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank" class="footer__social-links">
+                    <i class="ri-facebook-fill"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="footer__social-links">
+                    <i class="ri-instagram-fill"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="footer__social-links">
+                    <i class="ri-twitter-x-fill"></i>
+                </a>
+              </div>
+
+        </article>
+        </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Authentication Modal will be injected here -->
+  <div id="auth-modal-container"></div>
+  
+
+
+   <!--==================== CONTACT ====================-->
+   <section class="contact section" id = "contact">
+    <h2 class="section__title">
+        GET OUR <span>LATEST NEWS</span>  
+    </h2>
+        <p class="section__description">Get in touch with us for collaborations or inquiries.</p>
+
+    <div class="contact__container container grid">
+        <form action="" class="contact__form">
+            <input type="email" placeholder="Email Address" name="email" autocomplete="email" class="contact__input">
+            <button type="submit" class="section__button">Email Address</button>
+        </form>
+    </div>
+ </section>
+</main>
+
+<!--==================== FOOTER ====================-->
+<footer class="footer">
+ <div class="footer_container container grid">
+
+    <div class="footer__content grid">
+        <ul class="footer__links">
+            <li>
+                <a href="index.html" class="footer__links">HOME </a>
+            </li>
+
+            <li>
+                <a href="article.html" class="footer__links"> ARTICLES</a>
+            </li>
+
+            <li>
+                <a href="services.html" class="footer__links"> SERVICES</a>
+            </li>
+        </ul>
+        <div class="footer__social">
+            <a href="https://www.facebook.com/" target="_blank" class="footer__social-links">
+                <i class="ri-facebook-fill"></i>
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social-links">
+                <i class="ri-instagram-fill"></i>
+            </a>
+
+            <a href="https://twitter.com/" target="_blank" class="footer__social-links">
+                <i class="ri-twitter-x-fill"></i>
+            </a>
+        </div>
+
+    </div>
+    <span class="footer__copy">
+        &#169; All Rights Reserved By SIMRAN_SINGH
+    </span>
+
+ </div>
+</footer>
+
+      <!--========== SCROLL UP ==========-->
+      <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-fill"></i>
+      </a>
+
+
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="scrollreveal.min.js"></script>
+
+      <!--=============== SWIPER JS ===============-->
+      <script src="swiper-bundle.min.js"></script>
+
+
+      <script src="main.js"></script>
+    <!-- Modal container -->
+<div id="auth-modal-container"></div>
+
+<!-- Load modal logic -->
+<script>
+  // Load modal HTML and initialize logic
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('/auth-modal')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('auth-modal-container').innerHTML = html;
+
+        // Wait for DOM to update before initializing
+        setTimeout(() => {
+          window.AuthModal.init(); // Call init after modal is injected
+        }, 100);
+      })
+      .catch(err => console.error('Modal load error:', err));
+  });
+</script>
+
+<!-- Load modal logic functions -->
+<script src="auth-modal.js"></script>
+
+<script src="logout.js"></script>
+
+
+</body>
+</html>
