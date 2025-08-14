@@ -1,7 +1,15 @@
-window.logout = function () {
+// logout.js
+function handleLogout() {
+  // Clear session/token
   localStorage.removeItem('user');
-  window.location.href = 'index.html';
-  alert('You’ve been logged out.');
-};
+  
+  // Re-inject modal if needed
+  fetch('/auth-modal')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('auth-modal-container').innerHTML = html;
+      openModal(); // Show the modal
+    });
+}
 
 
