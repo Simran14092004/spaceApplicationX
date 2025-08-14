@@ -1,4 +1,3 @@
-/* styles.css */
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@400;500;600&display=swap");
 
 
@@ -136,7 +135,6 @@ img {
   color: transparent;
 }
 
-/* Add to style.css or inside <style> in <head> */
 /* Section Button Styling */
 .section__button {
   display: inline-block;
@@ -163,7 +161,7 @@ img {
   color: #ffe066;
 }
 
-/* Enhanced Section Description Styling */
+/*Section Description Styling */
 .section__description {
   text-align: center;
   font-size: var(--normal-font-size);
@@ -601,7 +599,7 @@ color: var(--first-color);
     left: 0;
     right: 0;
     margin: 0 auto;
-    /* Remove rotation and transition */
+    
 }
 
   .travel__info{
@@ -1201,10 +1199,6 @@ color: var(--first-color);
   display: none;
 }
   
-
-  
-  
-
 
 /* Auth Modal Styles */
 .auth-modal {

@@ -201,6 +201,7 @@
 
   <script>
     const BASE_URL = 'https://spaceapplicationx.onrender.com/';
+
  // Navbar toggle for mobile menu
   const navMenu = document.getElementById('nav-menu'),
         navToggle = document.getElementById('nav-toggle'),
@@ -220,7 +221,7 @@
     }
   }
 
-  // Hide menu on nav link click (optional, for better UX)
+  // Hide menu on nav link click 
   document.querySelectorAll('.nav__link').forEach(link => {
     link.onclick = () => navMenu.classList.remove('show-menu');
   });

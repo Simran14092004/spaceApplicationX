@@ -4,7 +4,7 @@ const BASE_URL = 'https://spaceapplicationx.onrender.com';
 function logout() {
   fetch(`${BASE_URL}/logout`, {
     method: 'POST',
-    credentials: 'include', // if using cookies/session
+    credentials: 'include', 
     headers: {
       'Content-Type': 'application/json'
     }
@@ -15,7 +15,7 @@ function logout() {
     })
     .then(() => {
       sessionStorage.setItem('showAuthModal', 'true');
-      window.location.href = '/'; // or 'index.html'
+      window.location.href = '/'; // later try once to check if works 'index.html'
     })
     .catch(err => {
       console.error('Logout error:', err);

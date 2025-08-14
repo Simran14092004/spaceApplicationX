@@ -1,4 +1,6 @@
 // Enhanced Navigation and Smooth Scrolling System
+
+//render.com URL for API requests
 const BASE_URL = 'https://spaceapplicationx.onrender.com';
 
 // Elements
@@ -316,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
  .then(res => res.text())
     .then(html => {
       document.getElementById('auth-modal-container').innerHTML = html;
-      window.AuthModal.init(); // Initialize after injection
+      window.AuthModal.init(); 
     })
     .catch(err => console.error('Modal load error:', err));
 });

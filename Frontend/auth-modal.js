@@ -11,7 +11,7 @@ function loadAuthModal() {
     .then(res => res.text())
     .then(html => {
       document.getElementById('auth-modal-container').innerHTML = html;
-      openModal(); // Your modal logic
+      openModal();
     });
 }
 
@@ -30,12 +30,12 @@ function init() {
 
 function showModal() {
   document.getElementById('auth-modal').classList.add('active');
-  document.body.classList.add('modal-open'); // Prevent outer scroll
+  document.body.classList.add('modal-open'); 
 }
 
 function hideModal() {
   document.getElementById('auth-modal').classList.remove('active');
-  document.body.classList.remove('modal-open'); // Restore scroll
+  document.body.classList.remove('modal-open'); 
 }
 
 

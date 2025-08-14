@@ -5,16 +5,16 @@ from datetime import datetime
 import logging
 from flask_cors import CORS
 
-# Initialize Flask app
+# Initializing 
 app = Flask(__name__, static_folder='../Frontend', static_url_path='')
 CORS(app, origins=["https://spaceexplorerx.netlify.app"])
-  # Enable CORS for all routes
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# In-memory storage for articles (in production, use a database)
+# In-memory storage for articles (in production, use a database for future , not yet implemented)
 articles = [
     {
         "title": "BLACK HOLE",
@@ -114,7 +114,7 @@ articles = [
     }
 ]
 
-# In-memory storage for email subscriptions
+# In-memory storage for email subscriptions (not yet implemented properly)
 subscribers = []
 
 # Routes
@@ -169,7 +169,7 @@ def auth_modal():
     return send_from_directory(app.static_folder, 'auth-modal.html')
 
 
-# In-memory storage for users
+# In-memory storage for users (some basic user management, not yet implemented properly)
 users = []
 
 @app.route('/api/signup', methods=['POST'])
@@ -188,11 +188,11 @@ def signup():
         if not password:
             return jsonify({"error": "Password is required"}), 400
 
-        # Check if user already exists
+        # Checking if user already exists
         if any(u['email'] == email for u in users):
             return jsonify({"message": "User already exists"}), 409
 
-        # Add new user
+        # Addition of new user
         users.append({
             "email": email,
             "first_name": first_name,
@@ -222,7 +222,7 @@ def login():
         if not password:
             return jsonify({"error": "Password is required"}), 400
 
-        # Find user by email and password
+        # Finding  user by email and password
         user = next((u for u in users if u['email'] == email and u['password'] == password), None)
         
         if not user:
@@ -268,11 +268,11 @@ def subscribe():
         if not email:
             return jsonify({"error": "Email is required"}), 400
         
-        # Check if email already exists
+        # Checking if email already exists
         if any(s['email'] == email for s in subscribers):
             return jsonify({"message": "Email already subscribed"}), 200
         
-        # Add new subscriber
+        # Addition of new subscriber
         subscribers.append({
             "email": email,
             "first_name": first_name,
