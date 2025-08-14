@@ -6,16 +6,14 @@ let modalOverlay, modalClose, tabBtns, tabContents, signupForm, loginForm, socia
 let currentTab = 'signup';
 let isAuthenticated = false;
 
-// // Inject modal HTML and initialize
-// document.addEventListener('DOMContentLoaded', () => {
-//   fetch(`${BASE_URL}/auth-modal`)
-//  .then(res => res.text())
-//     .then(html => {
-//       document.getElementById('auth-modal-container').innerHTML = html;
-//       window.AuthModal.init(); // Initialize after injection
-//     })
-//     .catch(err => console.error('Modal load error:', err));
-// });
+function loadAuthModal() {
+  fetch('/auth-modal')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('auth-modal-container').innerHTML = html;
+      openModal(); // Your modal logic
+    });
+}
 
 function init() {
   modalOverlay = document.getElementById('auth-modal');

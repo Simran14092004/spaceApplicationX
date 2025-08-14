@@ -338,3 +338,11 @@ function toggleAccordion(headerElement) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (sessionStorage.getItem('showAuthModal') === 'true') {
+    loadAuthModal();
+    sessionStorage.removeItem('showAuthModal');
+  }
+});
+
+

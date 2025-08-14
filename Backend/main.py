@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, jsonify, request, session, redirect, url_for, send_from_directory
 import os
 import json
 from datetime import datetime
@@ -7,7 +7,7 @@ from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__, static_folder='../Frontend', static_url_path='')
-CORS(app, origins=["https://soft-bublanina-55be5f.netlify.app/"])
+CORS(app, origins=["https://spaceexplorerx.netlify.app"])
   # Enable CORS for all routes
 
 # Configure logging
@@ -241,6 +241,12 @@ def login():
     except Exception as e:
         logger.error(f"Login error: {str(e)}")
         return jsonify({"error": "Login failed"}), 500
+
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.clear()  # Clears Flask session
+    return jsonify({'message': 'Logged out successfully'})
 
 
 
