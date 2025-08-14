@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: miniproject-backend
+    name: spaceapplication-backend
     env: python
-    buildCommand: ""
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn main:app
-    repo: https://github.com/SimranSingh/MINIPROJECT2
+    repo: https://github.com/Simran14092004/spaceApplicationX.git
     branch: main
     rootDir: Backend
+
