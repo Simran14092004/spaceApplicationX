@@ -7,7 +7,7 @@ from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__, static_folder='../Frontend', static_url_path='')
-CORS(app, origins=["https://soft-bublanina-55be5f.netlify.app/"])
+CORS(app, origins=["https://spaceexplorerx.netlify.app/index.html"])
   # Enable CORS for all routes
 
 # Configure logging
