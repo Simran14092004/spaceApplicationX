@@ -1,4 +1,4 @@
-const BASE_URL = 'https://spaceapplicationx.onrender.com/';
+const BASE_URL = 'https://spaceapplicationx.onrender.com';
 
 
 
@@ -9,7 +9,7 @@ let isAuthenticated = false;
 // Inject modal HTML and initialize
 document.addEventListener('DOMContentLoaded', () => {
   fetch(`${BASE_URL}/auth-modal`)
-    .then(res => res.text())
+ .then(res => res.text())
     .then(html => {
       document.getElementById('auth-modal-container').innerHTML = html;
       window.AuthModal.init(); // Initialize after injection

@@ -1,5 +1,5 @@
 // Enhanced Navigation and Smooth Scrolling System
-const BASE_URL = 'https://spaceapplicationx.onrender.com/';
+const BASE_URL = 'https://spaceapplicationx.onrender.com';
 
 // Elements
 const navMenu = document.getElementById('nav-menu');
@@ -321,6 +321,17 @@ if (document.querySelector('.footer__planet-1')) {
 if (document.querySelector('.footer__planet-2')) {
     sr.reveal('.footer__planet-2', { origin: 'right', delay: 500 });
 }
+
+// Inject modal HTML and initialize
+document.addEventListener('DOMContentLoaded', () => {
+  fetch(`${BASE_URL}/auth-modal`)
+ .then(res => res.text())
+    .then(html => {
+      document.getElementById('auth-modal-container').innerHTML = html;
+      window.AuthModal.init(); // Initialize after injection
+    })
+    .catch(err => console.error('Modal load error:', err));
+});
 
 
 //Accordion functionality
