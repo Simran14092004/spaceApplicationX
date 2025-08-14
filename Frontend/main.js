@@ -198,19 +198,17 @@ const swiperServices = new Swiper('.Services__swiper', {
     },
 });
 
-// Load authentication modal
-function loadAuthModal() {
-    fetch('auth-modal.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('auth-modal-container').innerHTML = html;
-            // Initialize the modal after loading
-            if (typeof AuthModal !== 'undefined') {
-                AuthModal.initializeModal();
-            }
-        })
-        .catch(error => console.error('Error loading auth modal:', error));
-}
+// Inject modal HTML and initialize
+document.addEventListener('DOMContentLoaded', () => {
+  fetch(`${BASE_URL}/auth-modal`)
+ .then(res => res.text())
+    .then(html => {
+      document.getElementById('auth-modal-container').innerHTML = html;
+      window.AuthModal.init(); // Initialize after injection
+    })
+    .catch(err => console.error('Modal load error:', err));
+});
+
 
 // Initialize authentication system
 document.addEventListener('DOMContentLoaded', () => {
