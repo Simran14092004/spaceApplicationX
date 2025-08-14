@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: miniproject-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn main:app
+    repo: https://github.com/SimranSingh/MINIPROJECT2
+    branch: main
+    rootDir: Backend
