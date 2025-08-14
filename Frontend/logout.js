@@ -8,7 +8,7 @@ window.logout = function () {
   alert('You’ve been logged out.');
 
   // Redirect to login/signup form
-  window.location.href = 'login.html'; // or 'signup.html' if that's your entry point
+  window.location.href = 'auth-modal.html'; 
 };
 
 
